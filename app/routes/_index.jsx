@@ -3,18 +3,35 @@ import { ClientOnly } from "remix-utils/client-only"
 export const meta = () => {
   return [
     { title: "Cloudflare Workers©" },
-    { name: "description", content: "Build your next application with Cloudflare Workers" },
+    {
+      name: "description",
+      content: "Build your next application with Cloudflare Workers",
+    },
     { name: "og:title", content: "Cloudflare Workers©" },
-    { name: "og:description", content: "Build your next application with Cloudflare Workers" },
-    { name: "og:image", content: "https://repository-images.githubusercontent.com/215130914/0a128400-41f5-11ea-8dc8-b1c09a48fa06" },
+    {
+      name: "og:description",
+      content: "Build your next application with Cloudflare Workers",
+    },
+    {
+      name: "og:image",
+      content:
+        "https://repository-images.githubusercontent.com/215130914/0a128400-41f5-11ea-8dc8-b1c09a48fa06",
+    },
     { name: "og:type", content: "website" },
     { name: "twitter:title", content: "Cloudflare Workers©" },
-    { name: "twitter:description", content: "Build your next application with Cloudflare Workers" },
-    { name: "twitter:image:src", content: "https://repository-images.githubusercontent.com/215130914/0a128400-41f5-11ea-8dc8-b1c09a48fa06" },
+    {
+      name: "twitter:description",
+      content: "Build your next application with Cloudflare Workers",
+    },
+    {
+      name: "twitter:image:src",
+      content:
+        "https://repository-images.githubusercontent.com/215130914/0a128400-41f5-11ea-8dc8-b1c09a48fa06",
+    },
     { name: "twitter:card", content: "summary" },
     { name: "twitter:creator", content: "@cloudflaredev" },
-  ];
-};
+  ]
+}
 
 import LatencyTest from "../components/latency_test"
 import Layout from "../components/layout"
@@ -237,9 +254,7 @@ const IndexPage = () => {
                     . Your code is powered by Cloudflare’s network which is
                     milliseconds away from virtually every Internet user.
                   </p>
-                  <ClientOnly>
-                    {() => <LatencyTest />}
-                  </ClientOnly>
+                  <ClientOnly>{() => <LatencyTest />}</ClientOnly>
                 </div>
               </div>
             </div>
@@ -570,6 +585,7 @@ const IndexPage = () => {
                   <li>Deploy up to 100 Worker scripts</li>
                   <li>Runs on all 275+ network locations</li>
                   <li>Free workers.dev subdomain</li>
+                  <li>Free static asset requests</li>
                   <li>Up to 10ms CPU time per request</li>
                   <li>Lowest latency after the first request</li>
                   <li>
@@ -613,31 +629,36 @@ const IndexPage = () => {
                 <h2 className="PlansSection--plan-title">Paid</h2>
                 <div className="PlansSection--plan-subtitle">
                   <span className="Number Number-is-strong">
-                    <span className="Number--dollars">$</span>
-                    <span className="Number--number">0.30</span>
-                    <span className="Number--per">/</span>
-                    <span className="Number--per-unit">
-                      <span className="Number--per-unit-multiplier">
-                        million
-                      </span>{" "}
-                      requests per month
-                    </span>
+                    <span className="Number--number">10 million requests per month</span>
                   </span>
                 </div>
                 <div className="PlansSection--plan-subtitle-note">
-                  (Minimum charge of{" "}
-                  <span className="Number">
-                    <span className="Number--dollars">$</span>
-                    <span className="Number--number">5</span>
-                    <span className="Number--per">/</span>
-                    <span className="Number--per-unit">mo</span>
-                  </span>
+                  <p>
+                    <span className="Number">
+                      <span className="Number--dollars">+$</span>
+                      <span className="Number--number">0.30</span>
+                      /million requests per month
+                    </span>
+                  </p>
+                  <p>
+                    (Minimum charge of{" "}
+                    <span className="Number">
+                      <span className="Number--dollars">$</span>
+                      <span className="Number--number">5</span>
+                      <span className="Number--per">/</span>
+                      <span className="Number--per-unit">mo</span>
+                    </span>
                   )
+                  </p>
                 </div>
               </div>
               <div className="PlansSection--plan-details">
                 <ul className="UnorderedListWorkersThemed">
                   <li>Everything in Free, plus:</li>
+                  <li>
+                    <strong>20 million included logs per month</strong>
+                    &nbsp;(+$0.60 per additional million)
+                  </li>
                   <li>
                     Up to <strong>30s of CPU time</strong> per request
                   </li>
@@ -677,6 +698,12 @@ const IndexPage = () => {
                 </a>
               </div>
             </div>
+          </div>
+
+          <div className="PlansSection--pricing-cta">
+            <p>
+              Visit our docs to <a href="https://developers.cloudflare.com/workers/platform/pricing/">learn more about pricing</a>.
+            </p>
           </div>
         </div>
       </section>

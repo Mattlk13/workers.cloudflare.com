@@ -13,6 +13,10 @@
   margin-top: 1.5em;
 }
 
+.Markdown > p a {
+  color: var(--color);
+}
+
 .Markdown > h1,
 .Markdown > h2 {
   font-weight: bold;
